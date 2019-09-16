@@ -12,7 +12,7 @@ namespace atividade4
             real = double.Parse(Console.ReadLine());
             Console.WriteLine("Digite o valor do dolar no momento");
             dolar = double.Parse(Console.ReadLine());
-            conversao = real * dolar;
+            conversao = real / dolar;
             Console.WriteLine("O valor da conversão é: " + conversao);
 
 

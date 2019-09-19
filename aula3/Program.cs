@@ -1,39 +1,50 @@
 ﻿using System;
 
-namespace aula3
-{
-    class Program
-    {
-        static void Main(string[] args)
-        {
-            // Declaramos as notas  que utilizaremos 
-            double nota1, nota2, nota3, media;
+namespace aula3 {
+    class Program {
+        static void Main (string[] args) {
+
+             // Laço contado  - For -Incremento (+)
+             for (int cont = 1; cont <= 100; cont++) {
+
+            //     // Verificamos se o numero é diferente de par 
+                 if (cont % 2 != 0) {
+                     Console.WriteLine ("For 0 - 100 " + cont);
+                 }
+             }
+              //Laço contado  - For -Incremento (-)
+              for (int cont = 100; cont >= 0; cont--) {
+
+                // Verificamos se o numero é diferente de par 
+                 if (cont % 2 != 0) {
+                     Console.WriteLine ("For 100 - 0 - " + cont);
+               }
+             }
+
+            // Laço Condicional While 
+
+            double nota   = 0;
+            double acumuladora   = 0;
+            int    cont   = 0;
+            string sair = "";
             
-            // Capturamos a 1 nota
-            Console.WriteLine("Digite sua primeira nota: ");
-            nota1 = double.Parse(Console.ReadLine() );
 
-              // Capturamos a 2 nota
-            Console.WriteLine("Digite sua segunda nota: ");
-            nota2 = double.Parse(Console.ReadLine() );
+            while(sair != "sim"){
+            
+                Console.WriteLine("Digite a nota de um aluno");
+                nota  = double.Parse(Console.ReadLine()) ;
 
-              // Capturamos a 3 nota
-            Console.WriteLine("Digite sua terceira nota: ");
-            nota3 = double.Parse(Console.ReadLine() );
+                if(nota != 1000){
+                    acumuladora += nota;
+                    cont++;
 
-            // Calculamos a media das notas 
-            media = (nota1 + nota2 + nota3) /3;
+                    Console.WriteLine("Deseja sair da aplicação? sim/não");
+                    sair = Console.ReadLine().ToLower();
+                }
 
-            // verificamos se a media do aluno é >=6
-            if(media >= 6) {
+                Console.WriteLine("Media das notas : " + (acumuladora/cont));
 
-                Console.WriteLine($"Média: {media} Aluno aprovado!");
-
-            } else {
-
-                Console.WriteLine($"Média: {media} Aluno reprovado");
             }
-
-        }
+         }
     }
-}
+}         
